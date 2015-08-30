@@ -10,7 +10,7 @@ var isSimpleWindowsTerm = process.platform === 'win32' && !/^xterm/i.test(proces
 function Chalk(options) {
 	// detect mode if not set manually
 	this.enabled = !options || options.enabled === undefined ? supportsColor : options.enabled;
-	this.enabled = !process.env.CATHODE ? this.enabled : false;
+	this.enabled = !process.env.CHALK_NO_COLOR ? this.enabled : false;
 }
 
 // use bright blue on Windows as the normal blue color is illegible
